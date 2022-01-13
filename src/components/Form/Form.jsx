@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react'
 
-function Form() {
+function Form({fetchList}) {
 
     const [item,setItem] = useState('');
     const [qty,setQty] = useState('');
@@ -21,7 +21,7 @@ function Form() {
 
             console.log('Response from POST:', response);
             // refresh DOM
-
+            fetchList();
             // clear form inputs
             setItem('');
             setQty('');
