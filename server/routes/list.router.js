@@ -80,9 +80,6 @@ router.delete('/', (req, res) => {
         })
 }) // end DELETE
 
-<<<<<<< HEAD
-=======
-
 router.delete('/:id', (req,res) => {
     console.log('removing from DB @ ID:', req.params.id);
     let queryText = `
@@ -101,7 +98,6 @@ router.delete('/:id', (req,res) => {
 })
 
 
->>>>>>> master
 router.put('/:id', (req, res) => {
 
     let queryText = `
@@ -123,8 +119,5 @@ router.put('/:id', (req, res) => {
 
         })
 })
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 module.exports = router;
