@@ -2,14 +2,14 @@ import axios from 'axios'
 
 import './ShoppingList.css'
 
-function ShoppingList({groceryList}){
+function ShoppingList({fetchList, groceryList}){
     console.log('is working', groceryList);
-    console.log(groceryList.map(grocery => grocery.quantity));
 
     const setBought = (id) => {
         console.log('setting item as bought: ID#', id);
         axios.put(`/grocery-list/${id}`).then((res) => {
             console.log('UPDATE:', res);
+            fetchList();
         }).catch((err) =>{
             console.log('FAILED:', err);
         });
@@ -34,14 +34,15 @@ function ShoppingList({groceryList}){
                         </h3>
                         {grocery.purchased 
                             ? <p>Purchased</p> 
-                            : <>
-                                <button onClick={() => setBought(grocery.id)}>
-                                    Buy
-                                </button>
-                                <button onClick={() => removeItem(grocery.id)}>
-                                    Remove
-                                </button>
-                            </>}
+                            : 
+                                <>
+                                    <button onClick={() => setBought(grocery.id)}>
+                                        Buy</button>
+                                    <button onClick={() => removeItem(grocery.id)}>
+                                        Remove
+                                    </button>
+                                </>
+                            }
                     </div>
                 ))
             }
