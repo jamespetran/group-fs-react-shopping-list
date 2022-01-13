@@ -11,4 +11,5 @@ CREATE TABLE groceries (
 );
 
 INSERT INTO groceries ("name", "quantity", "unit")
-VALUES ('banannas', 3, 'bundles'), ('eggs', 4, 'dozen');
+
+VALUES ('banannas', 3, 'bundles'), ('eggs', 4, 'dozen')
