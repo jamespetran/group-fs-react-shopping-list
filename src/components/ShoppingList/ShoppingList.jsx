@@ -7,6 +7,11 @@ function ShoppingList({groceryList}){
     const setBought = (id) => {
         console.log('setting item as bought: ID#', id);
     }
+
+    const removeItem = (id) => {
+        console.log('removing item: ID#', id);
+    }
+
     return (
         <>
             <h2>Shopping List</h2>
@@ -24,7 +29,7 @@ function ShoppingList({groceryList}){
                             <button onClick={() => setBought(grocery.id)}>
                                 Buy
                             </button>
-                            <button>
+                            <button onClick={() => removeItem(grocery.id)}>
                                 Remove
                             </button>
                         </div>
