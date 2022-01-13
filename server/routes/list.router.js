@@ -80,4 +80,21 @@ router.delete('/', (req, res) => {
         })
 }) // end DELETE
 
+router.delete('/:id', (req,res) => {
+    console.log('removing from DB @ ID:', req.params.id);
+    let queryText = `
+        DELETE FROM groceries
+        WHERE id = $1
+        `;
+    let queryParams = [ req.params.id ]
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            res.sendStatus(204);
+        })
+        .catch((err) => {
+            console.log('error in removing item#', req.params.id);
+            console.log(err);
+        });
+})
+
 module.exports = router;
