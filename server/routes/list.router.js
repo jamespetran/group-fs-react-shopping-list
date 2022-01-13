@@ -37,6 +37,22 @@ router.post('/', (req, res) => {
         })
 }); // end POST
 
+router.put('/', (req, res) => {
+
+    let queryText= `
+    UPDATE groceries
+    SET purchased = FALSE
+    `;
+    
+    pool.query(queryText)
+    .then((dbRes) => {
+        res.sendStatus(201)
+    })
+    .catch((err) => {
+        console.log('put failed', err);
+        res.sendStatus(500)
+        
+    })
 })
 
 router.delete('/:id', (req, res) => {
