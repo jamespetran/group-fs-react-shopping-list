@@ -80,4 +80,25 @@ router.delete('/', (req, res) => {
         })
 }) // end DELETE
 
+router.put('/:id', (req, res) => {
+
+    let queryText = `
+    UPDATE groceries
+    SET purchased = TRUE
+    WHERE id = $1;
+    `;
+    let queryParams = [
+        req.params.id
+    ]
+
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            res.sendStatus(201)
+        })
+        .catch((err) => {
+            console.log('put failed', err);
+            res.sendStatus(500)
+
+        })
+})
 module.exports = router;
