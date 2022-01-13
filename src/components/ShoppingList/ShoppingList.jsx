@@ -14,12 +14,9 @@ function ShoppingList({groceryList}){
                         <h3>
                             {grocery.quantity} {grocery.unit}
                         </h3>
-                        <button>
-                            Buy
-                        </button>
-                        <button>
-                            Remove
-                        </button>
+                        {grocery.purchased 
+                            ? <p>Purchased</p> 
+                            : <><button>Buy</button><button>Remove</button></>}
                     </div>
                 ))
             }
