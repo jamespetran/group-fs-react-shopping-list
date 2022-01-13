@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-function ListControl() {
+function ListControl({fetchList}) {
 
 
     const resetList = () => {
@@ -8,6 +8,7 @@ function ListControl() {
         axios.put('/grocery-list')
         .then((response) => {
             console.log('put success', response);
+            fetchList();
         })
     }
     const clearList = () => {
