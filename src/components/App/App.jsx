@@ -6,6 +6,7 @@ import Header from '../Header/Header.jsx'
 import ShoppingList from '../ShoppingList/ShoppingList'
 import Form from '../Form/Form'
 import './App.css';
+import ListControl from '../ListControl/ListControl'
 
 function App() {
     const [groceryList, setGroceryList] = useState([]);
@@ -27,6 +28,7 @@ function App() {
         <div className="App">
             <Header />
             <Form />
+            <ListControl />
             <main>
                 <p>Under Construction...</p>
                 <ShoppingList groceryList={groceryList} />
