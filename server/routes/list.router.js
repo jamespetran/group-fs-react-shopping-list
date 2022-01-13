@@ -61,18 +61,17 @@ router.put('/', (req, res) => {
 
 
 
-router.delete('/:id', (req, res) => {
+router.delete('/', (req, res) => {
     console.log('id is', req.params.id);
     let queryText = `
-    DELETE FROM groceries
-    WHERE id=$1;
+    DELETE FROM groceries;
     `
     
-    let queryParams = [
-        req.params.id
-    ]
+    // let queryParams = [
+    //     req.params.id
+    // ]
     
-    pool.query(queryText, queryParams)
+    pool.query(queryText)
         .then((dbRes) => {
             res.sendStatus(204)
         })

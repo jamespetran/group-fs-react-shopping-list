@@ -13,30 +13,23 @@ function ShoppingList({groceryList}){
     }
 
     return (
-        <>
-            <h2>Shopping List</h2>
-            <div id="grocery-list">
-                
-                {
-                    groceryList.map(grocery => (
-                        <div key={grocery.id} className="grocery-item">
-                            <h3>
-                                {grocery.name}
-                            </h3>
-                            <h3>
-                                {grocery.quantity} {grocery.unit}
-                            </h3>
-                            <button onClick={() => setBought(grocery.id)}>
-                                Buy
-                            </button>
-                            <button onClick={() => removeItem(grocery.id)}>
-                                Remove
-                            </button>
-                        </div>
-                    ))
-                }
-            </div>
-        </>
+        <div id="grocery-list">
+            {
+                groceryList.map(grocery => (
+                    <div key={grocery.id} className="grocery-item">
+                        <h3>
+                            {grocery.name}
+                        </h3>
+                        <h3>
+                            {grocery.quantity} {grocery.unit}
+                        </h3>
+                        {grocery.purchased 
+                            ? <p>Purchased</p> 
+                            : <><button onClick={() => setBought(grocery.id)}>Buy</button><buttononClick={() => removeItem(grocery.id)}>Remove</button></>}
+                    </div>
+                ))
+            }
+        </div>
     );
 }
 
