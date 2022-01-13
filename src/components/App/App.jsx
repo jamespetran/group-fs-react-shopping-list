@@ -27,14 +27,10 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <Form 
-                fetchList = {fetchList}
-            />
-
-            <ListControl fetchList={fetchList}/>
-
             <main>
-                <ShoppingList groceryList={groceryList} />
+                <Form fetchList = {fetchList} />
+                <ListControl fetchList={fetchList}/>                
+                <ShoppingList fetchList={fetchList} groceryList={groceryList} />
             </main>
         </div>
     );
