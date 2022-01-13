@@ -25,7 +25,8 @@ function ShoppingList({groceryList}){
                         </h3>
                         {grocery.purchased 
                             ? <p>Purchased</p> 
-                            : <><button onClick={() => setBought(grocery.id)}>Buy</button><buttononClick={() => removeItem(grocery.id)}>Remove</button></>}
+                            : <><button onClick={() => setBought(grocery.id)}>Buy</button><button onClick={() => removeItem(grocery.id)}>Remove</button></>
+                            }
                     </div>
                 ))
             }
