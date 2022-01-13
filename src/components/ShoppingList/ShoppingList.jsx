@@ -4,6 +4,7 @@ function ShoppingList({groceryList}){
     console.log('is working', groceryList);
     console.log(groceryList.map(grocery => grocery.quantity));
     return (
+
         <div id="grocery-list">
             {
                 groceryList.map(grocery => (
@@ -21,6 +22,7 @@ function ShoppingList({groceryList}){
                 ))
             }
         </div>
+
     );
 }
 

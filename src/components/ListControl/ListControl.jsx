@@ -1,9 +1,15 @@
-function ListControl() {
+import axios from 'axios'
+
+function ListControl({fetchList}) {
 
 
     const resetList = () => {
         console.log('in resetList');
-        
+        axios.put('/grocery-list')
+        .then((response) => {
+            console.log('put success', response);
+            fetchList();
+        })
     }
     const clearList = () => {
         console.log('in ClearList');
@@ -21,4 +27,4 @@ function ListControl() {
 
 }
 
-export default ListControl
+export default ListControl;
