@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react'
 
 function Form() {
@@ -15,10 +16,24 @@ function Form() {
             unit: unit
         }
         console.log(listItem);
+        axios.post('/grocery-list', listItem)
+        .then(function(response) {
+            console.log('Response from server:', response);
+            // refresh DOM
 
-    }
+            // clear form inputs
+            setItem('');
+            setQty('');
+            setUnit('');
+        })
+        .catch(function(error) {
+            console.log('Error in POST:', error);
+        });// end POST
+    }// end handleSubmit
 
     // POST can go here
+
+
     return(
         <form onSubmit={handleSubmit}>
             <label>Item</label>
