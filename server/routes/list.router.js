@@ -37,8 +37,6 @@ router.post('/', (req, res) => {
         })
 }); // end POST
 
-})
-
 router.delete('/:id', (req, res) => {
     console.log('id is', req.params.id);
     let queryText = `
