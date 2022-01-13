@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
 });// end GET
 
 router.post('/', (req, res) => {
+    console.log('In router POST',req.body);
     const item = req.body
     const sqlText = `INSERT INTO groceries(name, quantity, unit)
                       VALUES ($1, $2, $3)`
@@ -36,5 +37,25 @@ router.post('/', (req, res) => {
             
         })
 }); // end POST
+
+router.delete('/:id', (req, res) => {
+    console.log('id is', req.params.id);
+    let queryText = `
+    DELETE FROM groceries
+    WHERE id=$1;
+    `
+    
+    let queryParams = [
+        req.params.id
+    ]
+    
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            res.sendStatus(204)
+        })
+        .catch((err) => {
+            console.log('delete failed', err);
+        })
+}) // end DELETE
 
 module.exports = router;

@@ -18,7 +18,8 @@ function Form() {
         console.log(listItem);
         axios.post('/grocery-list', listItem)
         .then(function(response) {
-            console.log('Response from server:', response);
+
+            console.log('Response from POST:', response);
             // refresh DOM
 
             // clear form inputs
