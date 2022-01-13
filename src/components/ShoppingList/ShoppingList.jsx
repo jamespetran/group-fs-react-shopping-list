@@ -3,8 +3,16 @@ import './ShoppingList.css'
 function ShoppingList({groceryList}){
     console.log('is working', groceryList);
     console.log(groceryList.map(grocery => grocery.quantity));
-    return (
 
+    const setBought = (id) => {
+        console.log('setting item as bought: ID#', id);
+    }
+
+    const removeItem = (id) => {
+        console.log('removing item: ID#', id);
+    }
+
+    return (
         <div id="grocery-list">
             {
                 groceryList.map(grocery => (
@@ -17,12 +25,12 @@ function ShoppingList({groceryList}){
                         </h3>
                         {grocery.purchased 
                             ? <p>Purchased</p> 
-                            : <><button>Buy</button><button>Remove</button></>}
+                            : <><button onClick={() => setBought(grocery.id)}>Buy</button><button onClick={() => removeItem(grocery.id)}>Remove</button></>
+                            }
                     </div>
                 ))
             }
         </div>
-
     );
 }
 
