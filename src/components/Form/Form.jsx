@@ -16,7 +16,7 @@ function Form({fetchList}) {
             unit: unit
         }
         console.log(listItem);
-        axios.post('/grocery-list',listItem)
+        axios.post('/grocery-list', listItem)
         .then(function(response) {
 
             console.log('Response from POST:', response);

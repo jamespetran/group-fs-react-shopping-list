@@ -30,7 +30,9 @@ function App() {
             <Form 
                 fetchList = {fetchList}
             />
+
             <ListControl fetchList={fetchList}/>
+
             <main>
                 <ShoppingList groceryList={groceryList} />
             </main>
