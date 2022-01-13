@@ -27,10 +27,9 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <Form />
-            <ListControl />
             <main>
-                <p>Under Construction...</p>
+                <Form />
+                <ListControl />
                 <ShoppingList groceryList={groceryList} />
             </main>
         </div>

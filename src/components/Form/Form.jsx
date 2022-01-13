@@ -35,7 +35,9 @@ function Form() {
     // POST can go here
 
 
-    return(
+    return (
+        <>
+        <h2>Add Item!</h2>
         <form onSubmit={handleSubmit}>
             <label>Item</label>
             <input id="itemInput" onChange={(event) => setItem(event.target.value)} value={item} required />
@@ -45,6 +47,7 @@ function Form() {
             <input id="unitInput" onChange={(event) => setUnit(event.target.value)} value={unit} />
             <input type="submit"></input>
         </form>
+    </>
     )
 }
 

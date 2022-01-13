@@ -10,6 +10,7 @@ function ListControl() {
     }
     return (
         <>
+            <h2>Shopping List!</h2>
             <div>
                 <button onClick={resetList}>Reset</button>
             </div>
