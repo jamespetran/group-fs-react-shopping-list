@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 import './ShoppingList.css'
 
 function ShoppingList({groceryList}){
@@ -6,10 +8,17 @@ function ShoppingList({groceryList}){
 
     const setBought = (id) => {
         console.log('setting item as bought: ID#', id);
+        axios.put(`/grocery-list/${id}`).then((res) => {
+            console.log('UPDATE:', res);
+        }).catch((err) =>{
+            console.log('FAILED:', err);
+        });
+        
     }
 
     const removeItem = (id) => {
         console.log('removing item: ID#', id);
+        '/grocery-list/:id'
     }
 
     return (
@@ -25,7 +34,14 @@ function ShoppingList({groceryList}){
                         </h3>
                         {grocery.purchased 
                             ? <p>Purchased</p> 
-                            : <><button onClick={() => setBought(grocery.id)}>Buy</button><buttononClick={() => removeItem(grocery.id)}>Remove</button></>}
+                            : <>
+                                <button onClick={() => setBought(grocery.id)}>
+                                    Buy
+                                </button>
+                                <button onClick={() => removeItem(grocery.id)}>
+                                    Remove
+                                </button>
+                            </>}
                     </div>
                 ))
             }
