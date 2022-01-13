@@ -8,20 +8,23 @@ function Form() {
 
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         let listItem = {
             name: item,
-            quantity: ,
-            unit: 
-
+            quantity: qty,
+            unit: unit
         }
+        console.log(listItem);
 
     }
+
+    // POST can go here
     return(
         <form onSubmit={handleSubmit}>
             <label>Item</label>
-            <input id="itemInput" onChange={(event) => setItem(event.target.value)} value={item}/>
+            <input id="itemInput" onChange={(event) => setItem(event.target.value)} value={item} required />
             <label>Quantity</label>
-            <input id="qtyInput" onChange={(event) => setQty(event.target.value)} value={qty} />
+            <input id="qtyInput" onChange={(event) => setQty(event.target.value)} value={qty} required />
             <label>Unit</label>
             <input id="unitInput" onChange={(event) => setUnit(event.target.value)} value={unit} />
             <input type="submit"></input>
