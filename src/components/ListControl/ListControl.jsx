@@ -8,6 +8,7 @@ function ListControl({fetchList}) {
         axios.put('/grocery-list')
         .then((response) => {
             console.log('put success', response);
+            fetchList();
         })
     }
     const clearList = () => {
