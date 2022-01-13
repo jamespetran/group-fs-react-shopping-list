@@ -5,7 +5,6 @@ function ShoppingList({groceryList}){
     console.log(groceryList.map(grocery => grocery.quantity));
     return (
         <>
-            <h2>Shopping List</h2>
             <div id="grocery-list">
                 
                 {
