@@ -32,7 +32,6 @@ function App() {
             />
             <ListControl fetchList={fetchList}/>
             <main>
-                <p>Under Construction...</p>
                 <ShoppingList groceryList={groceryList} />
             </main>
         </div>
