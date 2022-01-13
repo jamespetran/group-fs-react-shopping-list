@@ -41,7 +41,8 @@ function ShoppingList({groceryList}){
                                 <button onClick={() => removeItem(grocery.id)}>
                                     Remove
                                 </button>
-                            </>}
+                            </>
+                            }
                     </div>
                 ))
             }
