@@ -3,6 +3,10 @@ import './ShoppingList.css'
 function ShoppingList({groceryList}){
     console.log('is working', groceryList);
     console.log(groceryList.map(grocery => grocery.quantity));
+
+    const setBought = (id) => {
+        console.log('setting item as bought: ID#', id);
+    }
     return (
         <>
             <h2>Shopping List</h2>
@@ -17,7 +21,7 @@ function ShoppingList({groceryList}){
                             <h3>
                                 {grocery.quantity} {grocery.unit}
                             </h3>
-                            <button>
+                            <button onClick={() => setBought(grocery.id)}>
                                 Buy
                             </button>
                             <button>
