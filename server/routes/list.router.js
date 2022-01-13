@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
 });// end GET
 
 router.post('/', (req, res) => {
+    console.log('In router POST',req.body);
     const item = req.body
     const sqlText = `INSERT INTO groceries(name, quantity, unit)
                       VALUES ($1, $2, $3)`
@@ -36,6 +37,9 @@ router.post('/', (req, res) => {
             
         })
 }); // end POST
+
+
+
 
 router.put('/', (req, res) => {
 
@@ -54,6 +58,8 @@ router.put('/', (req, res) => {
         
     })
 })
+
+
 
 router.delete('/:id', (req, res) => {
     console.log('id is', req.params.id);
