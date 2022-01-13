@@ -27,7 +27,9 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <Form />
+            <Form 
+                fetchList = {fetchList}
+            />
             <ListControl />
             <main>
                 <p>Under Construction...</p>
