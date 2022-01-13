@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-function ListControl() {
+function ListControl({fetchList}) {
 
 
     const resetList = () => {
@@ -12,6 +12,16 @@ function ListControl() {
     }
     const clearList = () => {
         console.log('in ClearList');
+        axios.delete('/grocery-list')
+        .then((response) => {
+            console.log('DELETE success', response);
+            fetchList();
+        })
+        .catch((error) => {
+            console.log('Error in DELETE', error);
+        });
+        //delete all request
+        //reset DOM -- reach out to App/fetchList()
     }
     return (
         <>
