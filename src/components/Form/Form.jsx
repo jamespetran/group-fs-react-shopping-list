@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react'
 
-function Form() {
+function Form({fetchList}) {
 
     const [item,setItem] = useState('');
     const [qty,setQty] = useState('');
@@ -16,12 +16,12 @@ function Form() {
             unit: unit
         }
         console.log(listItem);
-        axios.post('/grocery-list',listItem)
+        axios.post('/grocery-list', listItem)
         .then(function(response) {
 
             console.log('Response from POST:', response);
             // refresh DOM
-
+            fetchList();
             // clear form inputs
             setItem('');
             setQty('');
@@ -35,19 +35,19 @@ function Form() {
     // POST can go here
 
 
-    return (
+    return(
         <>
-        <h2>Add Item!</h2>
-        <form onSubmit={handleSubmit}>
-            <label>Item</label>
-            <input id="itemInput" onChange={(event) => setItem(event.target.value)} value={item} required />
-            <label>Quantity</label>
-            <input id="qtyInput" onChange={(event) => setQty(event.target.value)} value={qty} required />
-            <label>Unit</label>
-            <input id="unitInput" onChange={(event) => setUnit(event.target.value)} value={unit} />
-            <input type="submit"></input>
-        </form>
-    </>
+            <h2>Add an Item</h2>
+            <form onSubmit={handleSubmit}>
+                <label>Item</label>
+                <input id="itemInput" onChange={(event) => setItem(event.target.value)} value={item} required />
+                <label>Quantity</label>
+                <input id="qtyInput" onChange={(event) => setQty(event.target.value)} value={qty} required />
+                <label>Unit</label>
+                <input id="unitInput" onChange={(event) => setUnit(event.target.value)} value={unit} />
+                <input type="submit"></input>
+            </form>
+        </>
     )
 }
 
