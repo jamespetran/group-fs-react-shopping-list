@@ -16,7 +16,7 @@ function Form() {
             unit: unit
         }
         console.log(listItem);
-        axios.post({
+        axios({
             type:   'POST',
             url:    '/grocery-list',
             data:   listItem
