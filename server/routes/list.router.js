@@ -21,5 +21,24 @@ router.post('/', (req, res) => {
         })
 })
 
+router.delete('/:id', (req, res) => {
+    console.log('id is', req.params.id);
+    let queryText = `
+    DELETE FROM groceries
+    WHERE id=$1;
+    `
+    
+    let queryParams = [
+        req.params.id
+    ]
 
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            res.sendStatus(204)
+        })
+        .catch((err) => {
+            console.log('delete failed', err);
+            
+        })
+})
 module.exports = router;
