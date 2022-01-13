@@ -18,7 +18,15 @@ function ShoppingList({fetchList, groceryList}){
 
     const removeItem = (id) => {
         console.log('removing item: ID#', id);
-        '/grocery-list/:id'
+        axios.delete(`/grocery-list/${id}`)
+        .then((response) => {
+            console.log('DELETE success', response);
+            fetchList();
+        })
+        .catch((error) => {
+            console.log('Error in DELETE', error);
+        });
+
     }
 
     return (
