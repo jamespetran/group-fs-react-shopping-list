@@ -16,11 +16,7 @@ function Form() {
             unit: unit
         }
         console.log(listItem);
-        axios.post({
-            type:   'POST',
-            url:    '/grocery-list',
-            data:   listItem
-        })
+        axios.post('/grocery-list', listItem)
         .then(function(response) {
             console.log('Response from server:', response);
             // refresh DOM
