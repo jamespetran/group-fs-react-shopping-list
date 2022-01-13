@@ -16,13 +16,10 @@ function Form() {
             unit: unit
         }
         console.log(listItem);
-        axios.post({
-            type:   'POST',
-            url:    '/grocery-list',
-            data:   listItem
-        })
+        axios.post('/grocery-list',listItem)
         .then(function(response) {
-            console.log('Response from server:', response);
+
+            console.log('Response from POST:', response);
             // refresh DOM
 
             // clear form inputs
