@@ -1,0 +1,12 @@
+#grocery-list{
+    display: flex;
+    flex-direction: row;
+}
+
+.grocery-item{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    border: 2px  black solid;
+    margin: 20px;
+    padding: 10px;
+}

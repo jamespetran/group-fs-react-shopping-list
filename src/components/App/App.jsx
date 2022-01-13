@@ -10,12 +10,13 @@ import './App.css';
 function App() {
     const [groceryList, setGroceryList] = useState([]);
     useEffect(() => {
+        console.log('in use effect');
         fetchList();
     }, []);
 
     const fetchList = () => {
     axios.get('/grocery-list').then((res) => {
-        console.log('GET List', res);
+        console.log('GET List', res.data);
         setGroceryList(res.data)
     }).catch((err) => {
         console.log('ERR GET list', err);
@@ -28,7 +29,7 @@ function App() {
             <Form />
             <main>
                 <p>Under Construction...</p>
-                <ShoppingList />
+                <ShoppingList groceryList={groceryList} />
             </main>
         </div>
     );
