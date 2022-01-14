@@ -1,4 +1,5 @@
 import axios from 'axios'
+import './ListControl.css'
 
 function ListControl({fetchList}) {
 
@@ -26,11 +27,14 @@ function ListControl({fetchList}) {
     }
     return (
         <>
-            <div>
-                <button onClick={resetList}>Reset</button>
-            </div>
-            <div>
-                <button onClick={clearList}>Clear</button>
+            <h2>Shopping List!</h2>
+            <div id="controlButtons">
+                <div>
+                    <button className="btn btn-danger" onClick={resetList}>Reset</button>
+                </div>
+                <div>
+                    <button className="btn btn-danger" onClick={clearList}>Clear</button>
+                </div>
             </div>
         </>
     )

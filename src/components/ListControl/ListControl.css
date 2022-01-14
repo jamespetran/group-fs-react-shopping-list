@@ -1,0 +1,8 @@
+#controlButtons{
+    display: flex;
+    flex-direction: row;
+}
+
+#controlButtons button{
+    margin: 1rem;
+}
