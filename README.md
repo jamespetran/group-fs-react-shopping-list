@@ -2,15 +2,9 @@
 
 ## Description
 
-_Duration: 2 Week Sprint_
+_Duration: 8 hours_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
-
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
-
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
+A shopping list that can add, track, "mark as bought" and can clear and delete items. uses SQL, server side code, and a full client ui generated with react.
 
 ### Prerequisites
 
@@ -21,11 +15,7 @@ Link to software that is required to install the app (e.g. node).
 
 ## Installation
 
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
-
-If your application has secret keys (for example --  Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
-
-1. Create a database named `fs-react-shopping`,
+1. Create a database named `fs-react-shopping` 
 2. The queries in the `database.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries.
 3. Open up your editor of choice and run an `npm install`
 4. Run `npm run server` in your terminal
@@ -33,7 +23,6 @@ If your application has secret keys (for example --  Twilio), make sure you tell
 6. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
 1. Enter the food, quantity and (optional) bundle type
 2. Click Buy to mark the item as bought
@@ -44,7 +33,6 @@ How does someone use this application? Tell a user story here.
 
 ## Built With
 
-List technologies and frameworks here
 Express
 Node.js
 React
